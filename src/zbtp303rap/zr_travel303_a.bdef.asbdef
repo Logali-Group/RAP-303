@@ -30,7 +30,7 @@ authorization master ( global, instance )
 
   action ( features : instance, authorization : update ) acceptTravel result [1] $self;
   action ( features : instance, authorization : update ) rejectTravel result [1] $self;
-  action ( features : instance, authorization : update ) deductTravel parameter Za_travel_disc303_A result [1] $self;
+  action ( features : instance, authorization : update ) deductDiscount parameter Za_travel_disc303_A result [1] $self;
   internal action reCalcTotalPrice;
 
   determination setTravelNumber on save { create; }

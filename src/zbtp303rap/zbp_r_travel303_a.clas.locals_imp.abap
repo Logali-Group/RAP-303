@@ -1,6 +1,13 @@
 class lhc_Travel definition inheriting from cl_abap_behavior_handler.
   private section.
 
+    constants:
+      begin of travel_status,
+        open     type c length 1 value 'O', "Open
+        accepted type c length 1 value 'A', "Accepted
+        rejected type c length 1 value 'X', " Rejected
+      end of travel_status.
+
     methods get_instance_features for instance features
       importing keys request requested_features for Travel result result.
 
@@ -19,8 +26,8 @@ class lhc_Travel definition inheriting from cl_abap_behavior_handler.
     methods acceptTravel for modify
       importing keys for action Travel~acceptTravel result result.
 
-    methods deductTravel for modify
-      importing keys for action Travel~deductTravel result result.
+    methods deductDiscount for modify
+      importing keys for action Travel~deductDiscount result result.
 
     methods reCalcTotalPrice for modify
       importing keys for action Travel~reCalcTotalPrice.
@@ -52,6 +59,7 @@ class lhc_Travel definition inheriting from cl_abap_behavior_handler.
     methods validateDates for validate on save
       importing keys for Travel~validateDates.
 
+
 endclass.
 
 class lhc_Travel implementation.
@@ -72,15 +80,47 @@ class lhc_Travel implementation.
   endmethod.
 
   method acceptTravel.
+
+    modify entities of zr_travel303_a in local mode
+           entity Travel
+           update fields ( OverallStatus )
+           with value #(  for key in keys ( %tky          = key-%tky
+                                            OverallStatus = travel_status-accepted ) ).
+
+    read entities of zr_travel303_a in local mode
+         entity Travel
+         all fields
+         with corresponding #( keys )
+         result data(travels).
+
+    result = value #( for travel in travels ( %tky   = travel-%tky
+                                              %param = travel ) ).
+
   endmethod.
 
-  method deductTravel.
+  method deductDiscount.
   endmethod.
 
   method reCalcTotalPrice.
   endmethod.
 
   method rejectTravel.
+
+
+    modify entities of zr_travel303_a in local mode
+          entity Travel
+          update fields ( OverallStatus )
+          with value #(  for key in keys ( %tky          = key-%tky
+                                           OverallStatus = travel_status-rejected ) ).
+
+    read entities of zr_travel303_a in local mode
+         entity Travel
+         all fields
+         with corresponding #( keys )
+         result data(travels).
+
+    result = value #( for travel in travels ( %tky   = travel-%tky
+                                              %param = travel ) ).
   endmethod.
 
   method Resume.

@@ -3,6 +3,7 @@
 
 @Metadata.allowExtensions: true
 @Search.searchable: true
+@ObjectModel.semanticKey: ['BookingID']
 
 define view entity ZC_BOOKINGS303_A
   as projection on zr_bookings303_a
@@ -10,7 +11,7 @@ define view entity ZC_BOOKINGS303_A
   key BookingUUID,
 
       TravelUUID,
-
+            
       @Search.defaultSearchElement: true
       BookingID,
 
@@ -77,21 +78,22 @@ define view entity ZC_BOOKINGS303_A
                                            useForValidation: true }]
       FlightDate,
       
-      @Consumption.valueHelpDefinition: [{ entity: { name: '/DMO/I_Flight_StdVH',
-                                                     element: 'Price'},
-                                           additionalBinding: [{ localElement: 'FlightDate',
-                                                                 element: 'FlightDate',
-                                                                 usage: #FILTER_AND_RESULT },
-                                                               { localElement: 'AirlineID',
-                                                                 element: 'AirlineID',
-                                                                 usage: #FILTER_AND_RESULT },
-                                                                 { localElement: 'ConnectionID',
-                                                                 element: '#FILTER_AND_RESULT',
-                                                                 usage: #RESULT },
-                                                                 { localElement: 'CurrencyCode',
-                                                                 element: 'CurrencyCode',
-                                                                 usage: #RESULT }],
-                                           useForValidation: true }]
+      @Consumption.valueHelpDefinition: [ 
+          { entity: {name: '/DMO/I_Flight_StdVH', element: 'Price'},
+            additionalBinding: [ { localElement: 'FlightDate',   
+                                   element: 'FlightDate',   
+                                   usage: #FILTER_AND_RESULT},
+                                 { localElement: 'AirlineID',    
+                                   element: 'AirlineID',    
+                                   usage: #FILTER_AND_RESULT},
+                                 { localElement: 'ConnectionID', 
+                                   element: 'ConnectionID', 
+                                   usage: #FILTER_AND_RESULT},
+                                 { localElement: 'CurrencyCode', 
+                                   element: 'CurrencyCode', 
+                                   usage: #RESULT } ], 
+            useForValidation: true }
+        ]                                           
       FlightPrice,
       
       @Consumption.valueHelpDefinition: [{entity.name: 'I_CurrencyStdVH',

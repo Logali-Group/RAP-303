@@ -10,7 +10,7 @@ define behavior for ZI_TRAVEL303_A alias Travel
 
   use action acceptTravel;
   use action rejectTravel;
-  use action deductTravel;
+  use action deductDiscount;
   use action validateCustomerID;
   use action validateAgencyID;
   use action validateDateRange;
