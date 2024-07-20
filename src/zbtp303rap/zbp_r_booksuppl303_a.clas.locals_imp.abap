@@ -18,6 +18,18 @@ endclass.
 class lhc_BookingSupplement implementation.
 
   method calculateTotalPrice.
+
+    read entities of zr_travel303_a in local mode
+         entity BookingSupplement by \_Travel
+         fields ( TravelUUID )
+         with corresponding #( keys )
+         result data(travels).
+
+    modify entities of zr_travel303_a in local mode
+           entity Travel
+           execute reCalcTotalPrice
+           from corresponding #( travels ).
+
   endmethod.
 
   method setBookSupplNumber.

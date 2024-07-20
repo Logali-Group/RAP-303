@@ -57,19 +57,23 @@ annotate entity ZC_TRAVEL303_A with
          identification: [{ position: 50 }] }
   EndDate;
 
-  @UI: { lineItem: [{ position: 60, importance: #MEDIUM }],
+  @UI: { lineItem: [{ position: 60, importance: #HIGH }],
          identification: [{ position: 60 }] }
   BookingFee;
 
-  @UI: { lineItem: [{ position: 70, importance: #MEDIUM }],
+  @UI: { lineItem: [{ position: 70, importance: #HIGH }],
          identification: [{ position: 70 }] }
   TotalPrice;
+  
+  @UI: { lineItem: [{ position: 71, importance: #HIGH }],
+         identification: [{ position: 71 }] }
+  Discount;
 
   @UI: { lineItem: [{ position: 80, importance: #MEDIUM }],
          identification: [{ position: 80 }] }
   Description;
 
-  @UI: { lineItem: [{ position: 90, importance: #MEDIUM }],
+  @UI: { lineItem: [{ position: 90, importance: #HIGH }],
          identification: [{ position: 90 }],
          selectionField: [{ position: 40 }],
          textArrangement: #TEXT_ONLY }

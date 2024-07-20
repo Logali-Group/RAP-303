@@ -63,11 +63,11 @@ authorization master ( global, instance )
     validation validateCustomer;
     validation validateDates;
     validation validateCurrencyCode;
-    //    validation _Booking~validateCustomer;
-    //    validation _Booking~validateConnection;
-    //    validation _Booking~validateCurrencyCode;
-    //    validation _BookingSupplement~validateSupplement;
-    //    validation _BookingSupplement~validateCurrencyCode;
+    validation Booking~validateCustomer;
+    validation Booking~validateConnection;
+    validation Booking~validateCurrencyCode;
+    validation BookingSupplement~validateSupplement;
+    validation BookingSupplement~validateCurrencyCode;
   }
 
   mapping for ztravel303_a
