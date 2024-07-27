@@ -1,0 +1,17 @@
+projection implementation in class ZBP_C_HC_303_GEN unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_HC_303_GEN alias HCMMaster
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

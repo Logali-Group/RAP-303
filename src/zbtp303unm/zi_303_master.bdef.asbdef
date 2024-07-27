@@ -1,0 +1,16 @@
+unmanaged implementation in class zbp_i_303_master unique;
+strict ( 2 );
+
+define behavior for ZI_303_MASTER alias HCMMaster
+//late numbering
+lock master
+authorization master ( instance )
+etag master CreatedAt
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) EmployeeNumber;
+  field ( mandatory : create ) EmployeeName;
+
+}

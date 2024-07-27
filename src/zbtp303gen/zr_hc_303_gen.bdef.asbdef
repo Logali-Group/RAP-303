@@ -1,0 +1,59 @@
+managed implementation in class ZBP_R_HC_303_GEN unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_HC_303_GEN alias HCMMaster
+persistent table ZHC_303_GEN
+draft table ZHC_303_GEN_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   ENumber;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangeBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   ENumber;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZHC_303_GEN
+  {
+    ENumber = e_number;
+    EName = e_name;
+    EDepartment = e_department;
+    Status = status;
+    JobTitle = job_title;
+    StartDate = start_date;
+    EndDate = end_date;
+    Email = email;
+    MNumber = m_number;
+    MName = m_name;
+    MDepartment = m_department;
+    CreaDateTime = crea_date_time;
+    CreaUname = crea_uname;
+    LchgDateTime = lchg_date_time;
+    LchgUname = lchg_uname;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangeBy = local_last_change_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+}

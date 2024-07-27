@@ -1,0 +1,228 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ENumber'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ENumber'
+annotate view ZC_HC_303_GEN with
+{
+  @EndUserText.label: 'E Number'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  ENumber;
+  
+  @EndUserText.label: 'E Name'
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  EName;
+  
+  @EndUserText.label: 'E Department'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  EDepartment;
+  
+  @EndUserText.label: 'Status'
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Status;
+  
+  @EndUserText.label: 'Job Title'
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+
+  JobTitle;
+  
+  @EndUserText.label: 'Start Date'
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+
+  StartDate;
+  
+  @EndUserText.label: 'End Date'
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+
+  EndDate;
+  
+  @EndUserText.label: 'Email'
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+
+  Email;
+  
+  @EndUserText.label: 'M Number'
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+
+  MNumber;
+  
+  @EndUserText.label: 'M Name'
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+
+  MName;
+  
+  @EndUserText.label: 'M Department'
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+
+  MDepartment;
+  
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Zeitstempel'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'Zeitstempel'
+  } ]
+
+  CreaDateTime;
+  
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Benutzername'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Benutzername'
+  } ]
+
+  CreaUname;
+  
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'Zeitstempel'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'Zeitstempel'
+  } ]
+
+  LchgDateTime;
+  
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'Benutzername'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 , 
+    label: 'Benutzername'
+  } ]
+
+  LchgUname;
+  
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'Created By'
+  } ]
+
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'Created On'
+  } ]
+
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'Changed By'
+  } ]
+
+  LocalLastChangeBy;
+  
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'Changed On'
+  } ]
+
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'Changed On'
+  } ]
+
+  LastChangedAt;
+}

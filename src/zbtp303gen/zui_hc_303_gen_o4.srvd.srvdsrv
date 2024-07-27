@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_HC_303_GEN'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_HC_303_GEN'
+  }
+}
+define service ZUI_HC_303_GEN_O4 provider contracts odata_v4_ui {
+  expose ZC_HC_303_GEN as HCMMaster;
+}
